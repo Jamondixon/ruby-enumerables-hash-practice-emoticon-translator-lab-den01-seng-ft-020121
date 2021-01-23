@@ -25,7 +25,7 @@ require 'yaml'
 
 
   def get_english_meaning (path, emoticon) #takes a Japanese emoticon and returns its meaning in English
-     load_library(file_path).each do |key, value|
+     load_library(path).each do |key, value|
        if value[:japanese] == emoticon
          return key
        end
