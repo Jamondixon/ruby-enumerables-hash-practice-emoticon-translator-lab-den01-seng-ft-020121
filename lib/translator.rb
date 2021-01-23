@@ -15,21 +15,18 @@ require 'yaml'
   end
 
 
-  def get_japanese_emoticon(path, emoticon)
-    emoji = load_library(path)
-    if emoji["get_emoticon"].has_key?(emoticon)
-      emoji["get_emoticon"][emoticon]
-    else
-      return "Sorry, that emoticon was not found"
+
+  def get_japanese_emoticon (file_path, emoticon) #takes Western emoticon, :) and translate it to Japanese emoticon
+    if load_library(file_path)[:get_emoticon][emoticon]
+    load_library(file_path)[:get_emoticon][emoticon]
+    else "Sorry, that emoticon was not found"
     end
   end
 
 
-  def get_english_meaning(path, emoticon)
-    emoji = load_library(path)
-    if emoji["get_meaning"].has_key?(emoticon)
-      emoji["get_meaning"][emoticon]
-    else
-      return "Sorry, that emoticon was not found"
+  def get_english_meaning (file_path, emoticon) #takes a Japanese emoticon and returns its meaning in English
+    if load_library(file_path)[:get_meaning][emoticon]
+      load_library(file_path)[:get_meaning][emoticon]
+    else "Sorry, that emoticon was not found"
     end
   end
