@@ -32,4 +32,3 @@ require 'yaml'
      end
      return "Sorry, that emoticon was not found"
   end
-  
